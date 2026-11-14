@@ -1,0 +1,17 @@
+/target/
+/dist/
+/bin/
+/archive/
+/讨论提示词.md
+OrbmentData/
+portable.flag
+.env
+.env.*
+!.env.example
+diagnostics.json
+mft_snapshot.bin
+*.db
+*.db-wal
+*.db-shm
+*.tmp
+*.log

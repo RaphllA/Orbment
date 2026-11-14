@@ -1,0 +1,13 @@
+[package]
+name = "orbment-audio"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+orbment-core.workspace = true
+orbment-ui.workspace = true
+tracing.workspace = true
+serde.workspace = true
+windows = { workspace = true, features = ["Win32_System_Wmi", "Win32_System_Diagnostics_Debug"] }
+windows-core.workspace = true

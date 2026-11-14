@@ -1,0 +1,45 @@
+Orbment third-party notices
+==========================
+
+Orbment's own source, documentation and application artwork are provided under
+the MIT license in LICENSE. The following material retains its own terms.
+
+Snow Apps / snow-ui-selector
+---------------------------
+Copyright (C) 2026 mg-chao
+License: Apache-2.0 (see licenses/Apache-2.0.txt).
+
+The UI Automation hit testing in crates/orbment-vision/src/capture_overlay.rs
+includes a modified adaptation of the cached tree's structural sibling search
+from the following Apache-licensed revision:
+
+https://github.com/mg-chao/snow-apps/blob/e7ba29839163c4dd56aaf12797772a2abf948ece/snow-crates/crates/snow-ui-selector/src/windows/uia/cache.rs
+
+Orbment uses its own rectangle types, child lookup, probe worker and overlay
+integration. The attribution applies to the adapted hit-testing code, not to
+the rest of the screenshot implementation. This notice refers to that specific
+revision; current releases of Snow Apps may have different terms.
+
+Windows portable binary
+-----------------------
+The generated archive includes licenses/DEPENDENCIES.txt: versions, license
+expressions and full license/notice texts for the Windows app's locked Cargo
+dependency graph, including build-time dependencies for reference. The terms
+include separate notices for the fonts shipped through epaint_default_fonts
+(Hack, Noto Emoji, Ubuntu Light and emoji-icon-font). The bundled SQLite core
+is public domain (https://sqlite.org/copyright.html); its Rust wrapper has its
+own license in the dependency list.
+
+The egui and profiling license files in licenses/ come from the upstream
+revisions recorded in their published Cargo archives:
+https://github.com/emilk/egui/tree/1669e52a7ccfc3489c1b0999b9ed48894a0b3887
+https://github.com/aclysma/profiling/tree/8271551172eb6fa4cba47369aedd93790c623df9
+
+licenses/RUST-STANDARD-LIBRARY.html is the standard library copyright and
+license report supplied with the exact Rust toolchain used to build the archive.
+
+Referenced or optional software
+------------------------------
+See README.md for design and compatibility acknowledgments. Everything, PawnIO
+and its modules, ONNX Runtime and OCR model files are optional and are not
+distributed in the portable archive. Their own terms apply if installed.

@@ -1,0 +1,20 @@
+[package]
+name = "orbment-core"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+toml_edit.workspace = true
+tracing.workspace = true
+tracing-appender.workspace = true
+tracing-subscriber.workspace = true
+windows = { workspace = true, features = ["Win32_System_Registry", "Win32_Security_Authorization", "Win32_System_Pipes", "Win32_System_IO", "Win32_Devices_Display", "Win32_Graphics_Dwm", "Win32_System_DataExchange", "Win32_System_Wmi", "Win32_System_WinRT", "Foundation", "Globalization", "Graphics_Imaging", "Media_Ocr", "Storage", "Storage_Streams"] }
+rusqlite.workspace = true
+regex = "1"
+blake3 = "1"
+encoding_rs = "0.8"
+html2text = "0.16"
+url = "2"

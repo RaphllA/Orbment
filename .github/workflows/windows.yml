@@ -1,0 +1,30 @@
+name: Windows build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-x64:
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Rust
+        run: rustup toolchain install stable-x86_64-pc-windows-msvc --profile minimal --component clippy --component rust-docs
+      - name: Test workspace
+        run: cargo +stable-x86_64-pc-windows-msvc test --workspace --locked
+      - name: Check workspace
+        run: cargo +stable-x86_64-pc-windows-msvc clippy --workspace --all-targets --locked -- -D warnings
+      - name: Build portable package
+        run: ./scripts/package-portable.ps1
+        env:
+          RUSTUP_TOOLCHAIN: stable-x86_64-pc-windows-msvc
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Orbment-windows-x64-portable
+          path: dist/*.zip
+          if-no-files-found: error

@@ -1,0 +1,18 @@
+[package]
+name = "orbment-vision"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+rusqlite.workspace = true
+tracing.workspace = true
+orbment-core.workspace = true
+orbment-ui.workspace = true
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "gif", "webp", "bmp"] }
+html2text = "0.16"
+ort-sys = { version = "=2.0.0-rc.10", default-features = false, features = ["std", "disable-linking"] }
+tiny-skia = "0.11"
+windows = { workspace = true, features = ["Foundation", "Graphics_Capture", "Graphics_DirectX", "Graphics_DirectX_Direct3D11", "Win32_System_WinRT_Graphics_Capture", "Win32_System_WinRT_Direct3D11", "Win32_Graphics_Dwm", "Win32_UI_HiDpi", "Win32_System_Registry", "Win32_UI_Accessibility", "Win32_System_StationsAndDesktops", "Win32_Media_MediaFoundation", "Win32_Media_KernelStreaming"] }

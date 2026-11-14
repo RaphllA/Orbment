@@ -1,0 +1,28 @@
+[package]
+name = "orbment-app"
+version.workspace = true
+edition.workspace = true
+build = "build.rs"
+
+[[bin]]
+name = "orbment"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+rusqlite.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+windows.workspace = true
+windows-core.workspace = true
+orbment-core.workspace = true
+orbment-ui.workspace = true
+orbment-audio.workspace = true
+orbment-monitor.workspace = true
+orbment-analyzer.workspace = true
+orbment-clipboard.workspace = true
+orbment-mcp = { path = "../orbment-mcp" }
+orbment-vision.workspace = true
+orbment-quickask.workspace = true
+egui = "=0.31.1"

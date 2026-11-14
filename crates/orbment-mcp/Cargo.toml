@@ -1,0 +1,9 @@
+[package]
+name = "orbment-mcp"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+serde_json.workspace = true
+orbment-core.workspace = true

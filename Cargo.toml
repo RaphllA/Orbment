@@ -1,0 +1,34 @@
+[workspace]
+members = ["crates/orbment-core", "crates/orbment-ui", "crates/orbment-audio", "crates/orbment-monitor", "crates/orbment-analyzer", "crates/orbment-clipboard", "crates/orbment-importer", "crates/orbment-mcp", "crates/orbment-vision", "crates/orbment-quickask", "crates/orbment-app"]
+exclude = ["archive", "archive/2026-10-20-初版草稿"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+
+[workspace.dependencies]
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml_edit = { version = "0.22", features = ["serde"] }
+rusqlite = { version = "0.37", features = ["bundled"] }
+tracing = "0.1"
+tracing-appender = "0.2"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+windows-core = "0.61"
+windows = { version = "0.61", features = ["Win32_Foundation", "Win32_Security", "Win32_Security_Credentials", "Win32_System_Threading", "Win32_System_Com", "Win32_System_Com_StructuredStorage", "Win32_System_Ole", "Win32_System_Variant", "Win32_System_LibraryLoader", "Win32_System_ProcessStatus", "Win32_System_SystemInformation", "Win32_System_Memory", "Win32_System_Power", "Win32_System_TaskScheduler", "Win32_System_Diagnostics_ToolHelp", "Win32_UI_WindowsAndMessaging", "Win32_UI_Shell", "Win32_UI_Shell_PropertiesSystem", "Win32_UI_Input_KeyboardAndMouse", "Win32_Graphics_Gdi", "Win32_Graphics_Direct3D", "Win32_Graphics_Direct3D11", "Win32_Graphics_Dxgi", "Win32_Graphics_Dxgi_Common", "Win32_Graphics_Direct2D", "Win32_Graphics_Direct2D_Common", "Win32_Graphics_DirectWrite", "Win32_Media_Audio", "Win32_Media_Audio_Endpoints", "Win32_System_WinRT", "Win32_UI_Accessibility", "Win32_Devices_FunctionDiscovery", "Win32_NetworkManagement_IpHelper", "Win32_NetworkManagement_Ndis", "Win32_Networking_WinSock", "Win32_Storage_FileSystem", "Win32_System_Console", "Win32_System_Pipes", "Win32_Security_Authorization", "Win32_System_IO", "Win32_UI_Input_Ime", "Win32_System_Performance", "Win32_System_Ioctl"] }
+orbment-core = { path = "crates/orbment-core" }
+orbment-ui = { path = "crates/orbment-ui" }
+orbment-audio = { path = "crates/orbment-audio" }
+orbment-monitor = { path = "crates/orbment-monitor" }
+orbment-analyzer = { path = "crates/orbment-analyzer" }
+orbment-mcp = { path = "crates/orbment-mcp" }
+orbment-clipboard = { path = "crates/orbment-clipboard" }
+orbment-vision = { path = "crates/orbment-vision" }
+orbment-quickask = { path = "crates/orbment-quickask" }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
